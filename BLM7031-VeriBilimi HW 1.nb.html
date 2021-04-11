@@ -1797,8 +1797,6 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Cmd+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkoc3FsZGYpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGdnZm9ybXVsYSlcbmxpYnJhcnkocHN5Y2gpXG5gYGAifQ== -->
@@ -1810,12 +1808,84 @@ library(psych)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChkaWFtb25kcylcbmRlc2NyaWJlKGRpYW1vbmRzKVxuXG5cbmBgYCJ9 -->
+<pre class="r"><code>head(diamonds)
+describe(diamonds)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJbnNwZWN0aW5nIHRoZSBkYXRhIHNvdXJjZVxuZ2xpbXBzZShkaWFtb25kcylcbmBgYCJ9 -->
+<pre class="r"><code># Inspecting the data source
+glimpse(diamonds)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBXaGVuIEkgY2hlY2sgdGhlIGNsYXNzIGFuZCBudW1iZXIgb2YgbWlzc2luZyB2YXJpYWJsZXMsIHRoZXJlIGlzIG5vIG1pc3NpbmcgdmFsdWVzLiBEYXRhIGlzIHByZXR0eSBuZWF0LiBUaGVyZSBhcmUgaG93ZXZlciwgYSBmZXcgZmFjdG9yIHZhcmlhYmxlcy5cbmRhdGEuZnJhbWUoY2JpbmQoZGF0YS5mcmFtZShWYXJUeXBlPXNhcHBseShkaWFtb25kcyxjbGFzcykpLGRhdGEuZnJhbWUoVG90YWxfTWlzc2luZz1zYXBwbHkoZGlhbW9uZHMsZnVuY3Rpb24oeCl7c3VtKGlzLm5hKHgpKX0pKSkpXG5gYGAifQ== -->
+<pre class="r"><code># When I check the class and number of missing variables, there is no missing values. Data is pretty neat. There are however, a few factor variables.
+data.frame(cbind(data.frame(VarType=sapply(diamonds,class)),data.frame(Total_Missing=sapply(diamonds,function(x){sum(is.na(x))}))))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1Rhc2sxIENyZWF0ZSAyIG5ldyBjb2x1bW5zIHVzaW5nIG11dGF0ZSwgc3VtbWFyaXNlLCBmaWx0ZXIgYW5kIG90aGVyIGRwbHlyIGZ1bmN0aW9uc1xuXG5cblxuXG5cblxuXG5cblxuIyBMZXZlbHMgZnVuY3Rpb25zIGhlbHBzIHRvIHNob3cgZGlmZmVyZW50IGxldmVscyBpbiBmYWN0b3IgdmFyaWFibGVzXG5wcmludChcIkN1dCBMZXZlbHNcIilcbmxldmVscyhkaWFtb25kcyRjdXQpXG5cbnByaW50KFwiQ29sb3IgTGV2ZWxzXCIpXG5sZXZlbHMoZGlhbW9uZHMkY29sb3IpXG5cbnByaW50KFwiQ2xhcml0eSBMZXZlbHNcIilcbmxldmVscyhkaWFtb25kcyRjbGFyaXR5KVxuXG4jKioqIG9uZSBob3QgRW5jb2RpbmdcblxuaW5zdGFsbC5wYWNrYWdlcyhcImxhdHRpY2VcIilcbmxpYnJhcnkoY2FyZXQpXG5vaGVfZmVhdHVyZXM8LWMoXCJjdXRcIixcImNvbG9yXCIsXCJjbGFyaXR5XCIpXG5kdW1taWVzPC1kdW1teVZhcnMofmN1dCArIGNvbG9yICsgY2xhcml0eSAsZGF0YT1kaWFtb25kcylcblxuZGF0YTAyX29oZTwtYXMuZGF0YS5mcmFtZShwcmVkaWN0KGR1bW1pZXMsbmV3ZGF0YT1kaWFtb25kcykpXG5kYXRhMDNfY29tYmluZWQ8LWNiaW5kKGRpYW1vbmRzLGRhdGEwMl9vaGUpXG5cbmRhdGEwNDwtZGF0YTAzX2NvbWJpbmVkWywhbmFtZXMoZGF0YTAzX2NvbWJpbmVkKSVpbiVvaGVfZmVhdHVyZXNdXG5cbnJtKGRhdGEwM19jb21iaW5lZClcbnJtKGRhdGEwMl9vaGUpXG5cbiNUYXNrMiBDcmVhdGUgYSBNTCBtb2RlbCAoZGVjaXNpb24gdHJlZSwga25uLCByZWdyZXNzaW9uKSB0byBwcmVkaWN0IHByaWNlIG9mIGRpYW1vbmRcblxuIyBEZWNpc2lvbiBUcmVlXG5cbiMgS05OXG5cbiMgTGluZWFyIFJlZ3Jlc3Npb25cblxuIyBMb2dpc3RpYyBSZWdyZXNzaW9uXG5gYGAifQ== -->
+<pre class="r"><code>#Task1 Create 2 new columns using mutate, summarise, filter and other dplyr functions
+
+
+
+
+
+
+
+
+
+# Levels functions helps to show different levels in factor variables
+print(&quot;Cut Levels&quot;)
+levels(diamonds$cut)
+
+print(&quot;Color Levels&quot;)
+levels(diamonds$color)
+
+print(&quot;Clarity Levels&quot;)
+levels(diamonds$clarity)
+
+#*** one hot Encoding
+
+install.packages(&quot;lattice&quot;)
+library(caret)
+ohe_features&lt;-c(&quot;cut&quot;,&quot;color&quot;,&quot;clarity&quot;)
+dummies&lt;-dummyVars(~cut + color + clarity ,data=diamonds)
+
+data02_ohe&lt;-as.data.frame(predict(dummies,newdata=diamonds))
+data03_combined&lt;-cbind(diamonds,data02_ohe)
+
+data04&lt;-data03_combined[,!names(data03_combined)%in%ohe_features]
+
+rm(data03_combined)
+rm(data02_ohe)
+
+#Task2 Create a ML model (decision tree, knn, regression) to predict price of diamond
+
+# Decision Tree
+
+# KNN
+
+# Linear Regression
+
+# Logistic Regression</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7cn0KbGlicmFyeShkcGx5cikKbGlicmFyeShzcWxkZikKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGdnZm9ybXVsYSkKbGlicmFyeShwc3ljaCkKYGBgCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ21kK09wdGlvbitJKi4KCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ21kK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuIAoKVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyfQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KHNxbGRmKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkoZ2dmb3JtdWxhKQpsaWJyYXJ5KHBzeWNoKQpgYGAKCgpgYGB7cn0KaGVhZChkaWFtb25kcykKZGVzY3JpYmUoZGlhbW9uZHMpCgoKYGBgCgpgYGB7cn0KIyBJbnNwZWN0aW5nIHRoZSBkYXRhIHNvdXJjZQpnbGltcHNlKGRpYW1vbmRzKQpgYGAKCmBgYHtyfQojIFdoZW4gSSBjaGVjayB0aGUgY2xhc3MgYW5kIG51bWJlciBvZiBtaXNzaW5nIHZhcmlhYmxlcywgdGhlcmUgaXMgbm8gbWlzc2luZyB2YWx1ZXMuIERhdGEgaXMgcHJldHR5IG5lYXQuIFRoZXJlIGFyZSBob3dldmVyLCBhIGZldyBmYWN0b3IgdmFyaWFibGVzLgpkYXRhLmZyYW1lKGNiaW5kKGRhdGEuZnJhbWUoVmFyVHlwZT1zYXBwbHkoZGlhbW9uZHMsY2xhc3MpKSxkYXRhLmZyYW1lKFRvdGFsX01pc3Npbmc9c2FwcGx5KGRpYW1vbmRzLGZ1bmN0aW9uKHgpe3N1bShpcy5uYSh4KSl9KSkpKQpgYGAKCmBgYHtyfQojVGFzazEgQ3JlYXRlIDIgbmV3IGNvbHVtbnMgdXNpbmcgbXV0YXRlLCBzdW1tYXJpc2UsIGZpbHRlciBhbmQgb3RoZXIgZHBseXIgZnVuY3Rpb25zCgoKCgoKCgoKCiMgTGV2ZWxzIGZ1bmN0aW9ucyBoZWxwcyB0byBzaG93IGRpZmZlcmVudCBsZXZlbHMgaW4gZmFjdG9yIHZhcmlhYmxlcwpwcmludCgiQ3V0IExldmVscyIpCmxldmVscyhkaWFtb25kcyRjdXQpCgpwcmludCgiQ29sb3IgTGV2ZWxzIikKbGV2ZWxzKGRpYW1vbmRzJGNvbG9yKQoKcHJpbnQoIkNsYXJpdHkgTGV2ZWxzIikKbGV2ZWxzKGRpYW1vbmRzJGNsYXJpdHkpCgojKioqIG9uZSBob3QgRW5jb2RpbmcKCmluc3RhbGwucGFja2FnZXMoImxhdHRpY2UiKQpsaWJyYXJ5KGNhcmV0KQpvaGVfZmVhdHVyZXM8LWMoImN1dCIsImNvbG9yIiwiY2xhcml0eSIpCmR1bW1pZXM8LWR1bW15VmFycyh+Y3V0ICsgY29sb3IgKyBjbGFyaXR5ICxkYXRhPWRpYW1vbmRzKQoKZGF0YTAyX29oZTwtYXMuZGF0YS5mcmFtZShwcmVkaWN0KGR1bW1pZXMsbmV3ZGF0YT1kaWFtb25kcykpCmRhdGEwM19jb21iaW5lZDwtY2JpbmQoZGlhbW9uZHMsZGF0YTAyX29oZSkKCmRhdGEwNDwtZGF0YTAzX2NvbWJpbmVkWywhbmFtZXMoZGF0YTAzX2NvbWJpbmVkKSVpbiVvaGVfZmVhdHVyZXNdCgpybShkYXRhMDNfY29tYmluZWQpCnJtKGRhdGEwMl9vaGUpCgojVGFzazIgQ3JlYXRlIGEgTUwgbW9kZWwgKGRlY2lzaW9uIHRyZWUsIGtubiwgcmVncmVzc2lvbikgdG8gcHJlZGljdCBwcmljZSBvZiBkaWFtb25kCgojIERlY2lzaW9uIFRyZWUKCiMgS05OCgojIExpbmVhciBSZWdyZXNzaW9uCgojIExvZ2lzdGljIFJlZ3Jlc3Npb24KYGBgCgo=</div>
 
 
 
@@ -1862,7 +1932,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("BLM7031-VeriBilimi.Rmd");
+  window.initializeSourceEmbed("BLM7031-VeriBilimi HW 1.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
