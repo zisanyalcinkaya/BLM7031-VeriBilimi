@@ -12,6 +12,8 @@ library(ggplot2)
 library(ggformula)
 library(psych)
 library(caret)
+library (tree)
+library (ISLR)
 ```
 
 
@@ -61,6 +63,9 @@ diamonds$color <- as.factor(diamonds$color)
 diamonds$clarity <- as.factor(diamonds$clarity)
 str(diamonds)
 
+#Develop a prediction model using training and test sets 
+set.seed(2)
+
 #split dataset train is %80 and test is %20
 train <- diamonds %>% sample_frac(.8)
 test  <- anti_join(diamonds, train)
@@ -78,6 +83,18 @@ prediction <- predict(model1, test, type = "response")
 
 # Confusion Matrix
 table(test$price, prediction >= 0.5)
+
+#Decision Tree - Fit the Data to the model
+#use the tree() function to fit a classification tree in order to predict tree() High using all variables but Sales. 
+treepredmodel = tree(formula= price~., data = train )
+
+#The summary() function lists the variables that are used as internal nodes
+#in the tree, the number of terminal nodes, and the (training) error rate.
+summary(treepredmodel)
+
+# plot the trained tree 
+plot(treepredmodel )
+text(treepredmodel,pretty=0)
 
 
 
