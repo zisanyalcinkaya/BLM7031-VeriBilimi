@@ -107,23 +107,6 @@ text(treepredmodel,pretty=0)
 
 
 
-```
-
-```{r}
-
-
-```
-
-
-```{r}
-
-
-
-
-
-
-
-
 
 
 # Levels functions helps to show different levels in factor variables
@@ -135,16 +118,6 @@ levels(diamonds$color)
 
 print("Clarity Levels")
 levels(diamonds$clarity)
-
-
-
-
-
-# Decision Tree
-
-# KNN
-
-# Linear Regression
 
 ```
 
